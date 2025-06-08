@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const copiarBtn = document.getElementById('copiarSinal');
 
   let sinalAtual = '';
-  const ativos = ['frxEURUSD', 'frxGBPUSD', 'frxUSDJPY', 'frxGBPJPY', 'frxAUDUSD', 'frxEURJPY'];
+  const ativos = ['frxEURUSD', 'frxGBPUSD', 'frxUSDJPY', 'frxEURJPY', 'frxAUDUSD', 'frxNZDUSD', 'frxUSDCAD', 'frxUSDCHF', 'frxGBPJPY', 'frxAUDJPY', 'frxNZDJPY', 'frxCADJPY', 'frxCHFJPY', 'frxAUDCAD', 'frxAUDCHF', 'frxAUDNZD', 'frxCADCHF', 'frxCADNZD', 'frxCHFNZD'];
   let ativoIndex = 0;
 
   function trocarAtivo() {
@@ -47,6 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
         li.textContent = sinalAtual;
         listaHistorico.prepend(li);
         audio.play();
+        symbol = trocarAtivo();
+        ativoSpan.textContent = symbol;
+        ws.send(JSON.stringify({ forget_all: "ticks" }));
+        ws.send(JSON.stringify({ ticks: symbol }));
       } else {
         sinalInfo.textContent = '⏳ Aguardando confluência técnica...';
         forcaSinal.textContent = `⚡ Confluência: ${forca} — Força do Sinal: ${status}`;
