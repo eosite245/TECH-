@@ -1,0 +1,30 @@
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #111;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  border-bottom: 1px solid #333;
+}
+
+main {
+  padding: 1rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+#sinalInfo {
+  background: #222;
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+}
