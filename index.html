@@ -7,22 +7,39 @@
   <link rel="manifest" href="manifest.json" />
   <title>GIMBI SINAIS</title>
   <link rel="stylesheet" href="style.css" />
+  <script defer src="app.js"></script>
 </head>
 <body>
   <header>
-    <h1>📈 GIMBI SINAIS</h1>
+    <h1>📊 GIMBI SINAIS</h1>
   </header>
+  <nav>
+    <button class="aba ativa" data-aba="sinais">Sinais</button>
+    <button class="aba" data-aba="historico">Histórico</button>
+    <button class="aba" data-aba="acertos">Taxa de Acerto</button>
+    <button class="aba" data-aba="noticias">Notícias</button>
+  </nav>
   <main>
-    <section id="sinalAtual">
+    <section id="sinais" class="painel ativo">
       <h2>Sinal Atual</h2>
       <div id="sinalInfo">Conectando à Deriv...</div>
+      <button id="copiarSinal">📋 Copiar Sinal</button>
     </section>
-    <section id="historico">
+    <section id="historico" class="painel">
       <h2>Histórico de Sinais</h2>
       <ul id="listaHistorico"></ul>
     </section>
+    <section id="acertos" class="painel">
+      <h2>Taxa de Acerto</h2>
+      <p id="taxaAcerto">Calculando...</p>
+    </section>
+    <section id="noticias" class="painel">
+      <h2>Notícias do Mercado</h2>
+      <ul id="noticiasLista">
+        <li>⚠️ Evite operar durante grandes anúncios econômicos.</li>
+      </ul>
+    </section>
   </main>
   <audio id="audioNotificacao" src="notificacao.mp3" preload="auto"></audio>
-  <script src="app.js"></script>
 </body>
 </html>
