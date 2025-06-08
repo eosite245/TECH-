@@ -7,17 +7,3 @@ body {
 header, main {
   padding: 1rem;
 }
-input, button {
-  padding: 0.8rem;
-  margin: 0.5rem;
-  border-radius: 5px;
-  border: none;
-}
-button {
-  background-color: #0f0;
-  color: #000;
-  font-weight: bold;
-}
-.oculto {
-  display: none;
-}
