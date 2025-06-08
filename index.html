@@ -3,30 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GIMBI SINAIS PRO Avançado</title>
+  <title>GIMBI SINAIS PRO COMPLETO</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script defer src="app.js"></script>
 </head>
 <body>
   <header>
-    <h1>🚀 GIMBI SINAIS PRO</h1>
+    <h1>📲 GIMBI SINAIS PRO</h1>
   </header>
   <nav>
-    <button onclick="mostrar('grafico')">Gráfico</button>
-    <button onclick="mostrar('relatorio')">Relatório</button>
+    <button onclick="mostrar('sinais')">📡 Sinais</button>
+    <button onclick="mostrar('noticias')">📰 Notícias</button>
+    <button onclick="mostrar('historico')">📘 Histórico</button>
+    <button onclick="mostrar('estatisticas')">📊 Estatísticas</button>
   </nav>
   <main>
-    <section id="grafico" class="ativo">
-      <h2>Desempenho Real dos Sinais</h2>
-      <canvas id="graficoAcertos"></canvas>
+    <section id="sinais" class="ativo">
+      <h2>📡 Sinais ao Vivo</h2>
+      <div id="sinal">Sinal: EUR/USD | CALL | M5 | Score: 4/5</div>
+      <button onclick="copiarSinal()">📋 Copiar Sinal</button>
     </section>
-    <section id="relatorio" class="oculto">
-      <h2>📈 Relatório Backtesting (30 dias)</h2>
-      <p>Total de Sinais: 250</p>
-      <p>WIN: 82% | LOSS: 18%</p>
-      <p>Ativo mais lucrativo: EUR/USD (90% acerto)</p>
-      <p>Horário ideal: 10h às 14h (85% acerto)</p>
+
+    <section id="noticias" class="oculto">
+      <h2>📰 Notícias de Mercado</h2>
+      <ul>
+        <li>Alta volatilidade esperada no EUR/USD às 10h</li>
+        <li>Mercado asiático fecha em queda impulsionando USD</li>
+        <li>Banco Central Europeu mantém taxa de juros</li>
+      </ul>
+    </section>
+
+    <section id="historico" class="oculto">
+      <h2>📘 Histórico de Sinais</h2>
+      <ul id="listaHistorico">
+        <li>GBP/USD | PUT | M15 | 12:30</li>
+        <li>EUR/USD | CALL | M5 | 12:20</li>
+      </ul>
+    </section>
+
+    <section id="estatisticas" class="oculto">
+      <h2>📊 Estatísticas</h2>
+      <div class="grafico-container">
+        <canvas id="graficoAcertos"></canvas>
+      </div>
+      <div id="relatorioBacktest">
+        <p>Total de Sinais: 250</p>
+        <p>WIN: 82% | LOSS: 18%</p>
+        <p>Melhor ativo: EUR/USD (90%)</p>
+        <p>Melhor horário: 10h às 14h</p>
+      </div>
     </section>
   </main>
 </body>

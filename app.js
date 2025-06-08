@@ -3,6 +3,12 @@ function mostrar(secao) {
   document.getElementById(secao).classList.remove('oculto');
 }
 
+function copiarSinal() {
+  const texto = document.getElementById('sinal').innerText;
+  navigator.clipboard.writeText(texto);
+  alert('Sinal copiado: ' + texto);
+}
+
 window.onload = () => {
   const ctx = document.getElementById('graficoAcertos').getContext('2d');
   new Chart(ctx, {
