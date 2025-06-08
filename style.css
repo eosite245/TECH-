@@ -4,6 +4,22 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
 }
-header, main {
+header, nav, main {
   padding: 1rem;
+}
+button {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #0f0;
+  color: #000;
+  font-weight: bold;
+}
+.oculto {
+  display: none;
+}
+canvas {
+  max-width: 600px;
+  margin: 0 auto;
 }
