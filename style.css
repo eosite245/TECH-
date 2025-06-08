@@ -17,20 +17,12 @@ button {
   color: #000;
   font-weight: bold;
 }
-.oculto {
-  display: none;
-}
+.oculto { display: none; }
 .grafico-container {
   width: 100%;
   max-width: 400px;
   height: 300px;
   margin: 0 auto;
 }
-canvas {
-  width: 100% !important;
-  height: 100% !important;
-}
-ul {
-  list-style: none;
-  padding: 0;
-}
+canvas { width: 100% !important; height: 100% !important; }
+ul { list-style: none; padding: 0; }
