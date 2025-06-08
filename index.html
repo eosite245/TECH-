@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="manifest" href="manifest.json" />
+  <title>GIMBI SINAIS PRO</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header>
+    <h1>🚀 GIMBI SINAIS PRO</h1>
+  </header>
+  <main>
+    <section id="login" class="ativo">
+      <h2>Área PRO - Login</h2>
+      <input type="email" placeholder="E-mail" id="email" />
+      <input type="password" placeholder="Senha" id="senha" />
+      <button id="entrar">Entrar</button>
+      <button id="cadastrar">Cadastrar</button>
+    </section>
+
+    <section id="painel" class="oculto">
+      <h2>Bem-vindo ao Painel PRO</h2>
+      <div id="sinalInfo">Carregando sinais avançados...</div>
+      <canvas id="graficoAcertos"></canvas>
+      <button id="logout">Sair</button>
+    </section>
+  </main>
+</body>
+</html>
