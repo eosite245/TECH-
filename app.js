@@ -7,8 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const copiarBtn = document.getElementById('copiarSinal');
 
   let sinalAtual = '';
-  const symbol = 'frxEURUSD'; // Ativo fixo para testes
+  const ativos = ['frxEURUSD', 'frxGBPUSD', 'frxUSDJPY', 'frxGBPJPY', 'frxAUDUSD', 'frxEURJPY'];
+  let ativoIndex = 0;
 
+  function trocarAtivo() {
+    return ativos[ativoIndex++ % ativos.length];
+  }
+
+  let symbol = trocarAtivo();
   ativoSpan.textContent = symbol;
 
   const ws = new WebSocket('wss://ws.derivws.com/websockets/v3?app_id=1089');
@@ -23,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const price = parseFloat(data.tick.quote);
       const agora = new Date().toLocaleTimeString('pt-BR');
 
-      // Simular confluência técnica
       const confluencia = {
         suporte: price % 1 < 0.1,
         candle: Math.random() > 0.6,
