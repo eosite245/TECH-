@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#000000">
-  <link rel="manifest" href="manifest.json">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="manifest" href="manifest.json" />
   <title>GIMBI SINAIS</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <h1>📈 GIMBI SINAIS</h1>
   </header>
-
   <main>
     <section id="sinalAtual">
       <h2>Sinal Atual</h2>
-      <div id="sinalInfo">Carregando sinal...</div>
+      <div id="sinalInfo">Conectando à Deriv...</div>
     </section>
     <section id="historico">
       <h2>Histórico de Sinais</h2>
       <ul id="listaHistorico"></ul>
     </section>
   </main>
-
   <audio id="audioNotificacao" src="notificacao.mp3" preload="auto"></audio>
   <script src="app.js"></script>
 </body>
