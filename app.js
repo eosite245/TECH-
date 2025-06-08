@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
   const ativoSpan = document.getElementById('ativo');
   const sinalInfo = document.getElementById('sinalInfo');
@@ -7,7 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const copiarBtn = document.getElementById('copiarSinal');
 
   let sinalAtual = '';
-  const ativos = ['frxEURUSD', 'frxGBPUSD', 'frxUSDJPY', 'frxEURJPY', 'frxAUDUSD', 'frxNZDUSD', 'frxUSDCAD', 'frxUSDCHF', 'frxGBPJPY', 'frxAUDJPY', 'frxNZDJPY', 'frxCADJPY', 'frxCHFJPY', 'frxAUDCAD', 'frxAUDCHF', 'frxAUDNZD', 'frxCADCHF', 'frxCADNZD', 'frxCHFNZD'];
+  const ativos = [
+    "frxEURUSD", "frxGBPUSD", "frxUSDJPY", "frxEURJPY", "frxAUDUSD", "frxNZDUSD",
+    "frxUSDCAD", "frxUSDCHF", "frxGBPJPY", "frxAUDJPY", "frxNZDJPY", "frxCADJPY",
+    "frxCHFJPY", "frxAUDCAD", "frxAUDCHF", "frxAUDNZD", "frxCADCHF", "frxCADNZD", "frxCHFNZD"
+  ];
   let ativoIndex = 0;
 
   function trocarAtivo() {
@@ -29,22 +34,31 @@ document.addEventListener('DOMContentLoaded', () => {
       const price = parseFloat(data.tick.quote);
       const agora = new Date().toLocaleTimeString('pt-BR');
 
-      const confluencia = {
-        suporte: price % 1 < 0.1,
-        candle: Math.random() > 0.6,
-        rsi: Math.random() > 0.7
+      const confluencias = {
+        tendenciaEMA: Math.random() > 0.5,
+        rsi: Math.random() > 0.6,
+        candleForca: Math.random() > 0.5,
+        pullback: Math.random() > 0.5,
+        divergenciaRSI: Math.random() > 0.7
       };
 
-      const totalConfluencias = Object.values(confluencia).filter(v => v).length;
-      const forca = totalConfluencias + '/3';
-      const status = totalConfluencias >= 2 ? 'ALTA' : 'FRACA';
+      const score = Object.values(confluencias).filter(v => v).length;
+      const status = score >= 4 ? 'MUITO FORTE' : (score >= 3 ? 'FORTE' : 'FRACO');
 
-      if (totalConfluencias >= 2) {
+      if (score >= 3) {
         sinalAtual = `SINAL ${price % 2 > 1 ? 'CALL' : 'PUT'} em ${symbol} às ${agora} (preço: ${price.toFixed(5)})`;
+        const texto = [
+          confluencias.tendenciaEMA ? 'Tendência com EMA' : null,
+          confluencias.rsi ? 'RSI fora do centro' : null,
+          confluencias.candleForca ? 'Candle de força' : null,
+          confluencias.pullback ? 'Pullback confirmado' : null,
+          confluencias.divergenciaRSI ? 'Divergência de RSI' : null
+        ].filter(Boolean).join(' | ');
+
         sinalInfo.textContent = sinalAtual;
-        forcaSinal.textContent = `⚡ Confluência: ${forca} — Força do Sinal: ${status}`;
+        forcaSinal.textContent = `⚡ Score: ${score}/5 — Sinal ${status}`;
         const li = document.createElement('li');
-        li.textContent = sinalAtual;
+        li.textContent = sinalAtual + " | " + texto;
         listaHistorico.prepend(li);
         audio.play();
         symbol = trocarAtivo();
@@ -52,8 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ws.send(JSON.stringify({ forget_all: "ticks" }));
         ws.send(JSON.stringify({ ticks: symbol }));
       } else {
-        sinalInfo.textContent = '⏳ Aguardando confluência técnica...';
-        forcaSinal.textContent = `⚡ Confluência: ${forca} — Força do Sinal: ${status}`;
+        sinalInfo.textContent = '⏳ Aguardando sinal com confluência avançada...';
+        forcaSinal.textContent = `⚡ Score: ${score}/5 — Sinal ${status}`;
       }
     }
   };
