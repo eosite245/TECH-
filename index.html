@@ -1,49 +1,16 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GIMBI SINAIS PRO</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script defer src="app.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GIMBI SINAIS PRO v11</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header><h1>🚀 GIMBI SINAIS PRO</h1></header>
-  <nav>
-    <button onclick="mostrar('sinais')">📡 Sinais</button>
-    <button onclick="mostrar('noticias')">📰 Notícias</button>
-    <button onclick="mostrar('historico')">📘 Histórico</button>
-    <button onclick="mostrar('estatisticas')">📊 Estatísticas</button>
-  </nav>
-  <main>
-    <section id="sinais" class="ativo">
-      <h2>📡 Sinais Inteligentes</h2>
-      <div id="sinalGerado">Gerando sinal...</div>
-      <button onclick="copiarSinal()">📋 Copiar Sinal</button>
-    </section>
-    <section id="noticias" class="oculto">
-      <h2>📰 Notícias do Mercado</h2>
-      <ul>
-        <li>EUR/USD com alta volatilidade esperada às 10h</li>
-        <li>Decisão do FOMC movimenta o dólar nesta manhã</li>
-        <li>Taxa de juros do BCE mantida: impacto no euro</li>
-      </ul>
-    </section>
-    <section id="historico" class="oculto">
-      <h2>📘 Histórico de Sinais</h2>
-      <ul id="historicoSinais"></ul>
-    </section>
-    <section id="estatisticas" class="oculto">
-      <h2>📊 Estatísticas</h2>
-      <div class="grafico-container"><canvas id="graficoAcertos"></canvas></div>
-      <div id="relatorioBacktest">
-        <p>Total de Sinais: 250</p>
-        <p>WIN: 82% | LOSS: 18%</p>
-        <p>Melhor ativo: EUR/USD (90%)</p>
-        <p>Melhor horário: 10h às 14h</p>
-      </div>
-    </section>
-  </main>
+  <div class="container">
+    <h1>📈 GIMBI SINAIS PRO</h1>
+    <div id="sinal-container">Carregando sinais ao vivo...</div>
+  </div>
+  <script src="app.js"></script>
 </body>
 </html>
