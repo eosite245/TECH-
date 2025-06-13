@@ -1,19 +1,23 @@
-// GIMBI SINAIS PRO v19 - Resultado Telegram Inteligente
-// Funcionalidade principal:
-// 1. Envia sinal com entrada na próxima vela
-// 2. Aguarda a próxima vela abrir e fechar
-// 3. Compara o preço de entrada com o fechamento
-// 4. Envia resultado para Telegram: WIN ou LOSS
-
-// Exemplo de mensagens:
-// 📩 Sinal:
-// 🟢 NOVO SINAL - EUR/USD - CALL - Entrada: 110 - Hora: 14:20
+// GIMBI SINAIS PRO v20 - Timeframe Profissional (M5/M15) com Resultados e Horário Local (Brasília)
 //
-// 📊 Resultado (após confirmação):
-// 📊 RESULTADO DO SINAL - EUR/USD - CALL - ✅ WIN - Hora: 14:22
-
-// ⚠️ Aguardar a vela de entrada fechar corretamente antes de enviar resultado
-// ⚙️ Lógica de verificação baseada na comparação de preço de entrada vs fechamento
-
-// Manter histórico local, som de alerta, botão copiar e envio somente se força === 'forte'
+// Funcionalidades incluídas:
+// - ✅ Geração de sinais apenas em M5 ou M15
+// - ✅ Expiração configurada para 5 ou 15 minutos conforme o timeframe do sinal
+// - ✅ Envio automático para Telegram apenas se força === 'FORTE'
+// - ✅ Após expiração, resultado (WIN ou LOSS) enviado ao Telegram
+// - ✅ Mensagem inclui horário exato de geração no fuso horário de Brasília
+//
+// Exemplo de mensagem no Telegram:
+// 🟢 NOVO SINAL
+// Ativo: GBP/USD
+// Direção: CALL
+// Entrada: Próxima vela (Expiração: 15 minutos)
+// 🕒 Gerado às: 14:45 (Horário de Brasília)
+//
+// Após confirmação:
+// 📊 RESULTADO DO SINAL
+// Ativo: GBP/USD
+// Direção: CALL
+// Resultado: ✅ WIN
+// 🕒 Resultado às: 15:00 (Horário de Brasília)
 
