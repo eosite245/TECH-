@@ -1,23 +1,19 @@
-// GIMBI SINAIS PRO v20 - Timeframe Profissional (M5/M15) com Resultados e Horário Local (Brasília)
-//
-// Funcionalidades incluídas:
-// - ✅ Geração de sinais apenas em M5 ou M15
-// - ✅ Expiração configurada para 5 ou 15 minutos conforme o timeframe do sinal
-// - ✅ Envio automático para Telegram apenas se força === 'FORTE'
-// - ✅ Após expiração, resultado (WIN ou LOSS) enviado ao Telegram
-// - ✅ Mensagem inclui horário exato de geração no fuso horário de Brasília
-//
-// Exemplo de mensagem no Telegram:
+// GIMBI SINAIS PRO v21 - Multiativos Forex (frx) Ativados
+// Monitora todos os ativos frx da Deriv (ex: EUR/USD, GBP/USD, USD/JPY, AUD/USD, etc.)
+// Timeframes usados: M5 e M15
+// Gera sinais apenas com confluência técnica FORTE
+// Entrada: próxima vela
+// Expiração: 5 ou 15 minutos
+// Resultado (WIN/LOSS) enviado após expiração
+// Mostra horário de geração e resultado no fuso horário de Brasília
+
+// Exemplo:
 // 🟢 NOVO SINAL
-// Ativo: GBP/USD
+// Ativo: EUR/USD
 // Direção: CALL
 // Entrada: Próxima vela (Expiração: 15 minutos)
-// 🕒 Gerado às: 14:45 (Horário de Brasília)
+// 🕒 Gerado às: 11:15 (Horário de Brasília)
 //
-// Após confirmação:
 // 📊 RESULTADO DO SINAL
-// Ativo: GBP/USD
-// Direção: CALL
-// Resultado: ✅ WIN
-// 🕒 Resultado às: 15:00 (Horário de Brasília)
-
+// Resultado: ✅ WIN / ❌ LOSS
+// 🕒 Resultado às: 11:30 (Horário de Brasília)
