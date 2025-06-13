@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GIMBI SINAIS PRO v13</title>
-  <link rel="manifest" href="manifest.json">
+  <title>GIMBI SINAIS PRO</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
 </head>
 <body>
   <div class="tabs">
     <button onclick="mostrarAba('sinais')">📈 Sinais</button>
     <button onclick="mostrarAba('historico')">📊 Histórico</button>
-    <button onclick="mostrarAba('noticias')">📰 Notícias</button>
   </div>
   <div class="container">
     <div id="sinais" class="aba ativa">
@@ -19,16 +18,8 @@
       <div id="sinal-container">Carregando sinais ao vivo...</div>
     </div>
     <div id="historico" class="aba">
-      <h2>📊 Histórico de Sinais</h2>
-      <div id="historico-container">Sem histórico ainda.</div>
-    </div>
-    <div id="noticias" class="aba">
-      <h2>📰 Notícias</h2>
-      <ul>
-        <li>Mercado europeu abre em alta após decisão do BCE.</li>
-        <li>Expectativa de dados do payroll movimenta o dólar.</li>
-        <li>Investidores aguardam fala do presidente do FED.</li>
-      </ul>
+      <h2>📊 Histórico</h2>
+      <div id="historico-container">Sem sinais recentes.</div>
     </div>
   </div>
   <script src="app.js"></script>
