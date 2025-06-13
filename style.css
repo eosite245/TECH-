@@ -1,1 +1,66 @@
-/* style.css real com estilo profissional */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #121212;
+  color: #f2f2f2;
+}
+
+.container {
+  padding: 18px;
+}
+
+.tabs {
+  display: flex;
+  background: #202020;
+  border-bottom: 2px solid #222;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 12px 0;
+  background: #181818;
+  color: #fff;
+  border: none;
+  font-size: 1.07em;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.tabs button:hover, .tabs button:focus {
+  background: #292929;
+}
+
+.aba { display: none; }
+.aba.ativa { display: block; }
+
+.sinal {
+  background: #202020;
+  margin: 16px 0 10px 0;
+  padding: 16px 18px 10px 18px;
+  border-radius: 10px;
+  border-left: 6px solid #09ff63;
+  box-shadow: 0 2px 8px 0 #00000033;
+}
+
+.sinal.fraco  { border-left: 6px solid #ff2e63; }
+.sinal.medio  { border-left: 6px solid #ffbe5c; }
+.sinal.forte  { border-left: 6px solid #09ff63; }
+
+.sinal button {
+  margin-top: 7px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: none;
+  background: #111;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.sinal button:hover { background: #09ff63; color: #121212; }
+
+#historico-container {
+  margin-top: 12px;
+}
