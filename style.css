@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
   font-family: sans-serif;
@@ -7,8 +6,25 @@ body {
 }
 .container {
   padding: 20px;
-  text-align: center;
 }
+.tabs {
+  display: flex;
+  background: #222;
+}
+.tabs button {
+  flex: 1;
+  padding: 15px;
+  background: #111;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+.tabs button:hover {
+  background: #333;
+}
+.aba { display: none; }
+.aba.ativa { display: block; }
 .sinal {
   background-color: #222;
   padding: 15px;

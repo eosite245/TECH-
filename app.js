@@ -1,17 +1,24 @@
-
 const container = document.getElementById("sinal-container");
+const historicoContainer = document.getElementById("historico-container");
 const historicoKey = "gimbi_historico";
-
 const ativos = ["frxEURUSD", "frxUSDJPY", "frxGBPUSD", "frxAUDUSD", "frxUSDCAD", "frxUSDCHF"];
-
-function mostrarMensagem(texto) {
-  container.innerHTML = `<p style='color: orange;'>${texto}</p>`;
-}
 
 function salvarNoHistorico(sinal) {
   const historico = JSON.parse(localStorage.getItem(historicoKey)) || [];
   historico.unshift(sinal);
   localStorage.setItem(historicoKey, JSON.stringify(historico.slice(0, 20)));
+  renderizarHistorico();
+}
+
+function renderizarHistorico() {
+  const historico = JSON.parse(localStorage.getItem(historicoKey)) || [];
+  historicoContainer.innerHTML = historico.map(s =>
+    `<div class="sinal ${s.forca}">
+      <h3>${s.ativo} - ${s.direcao}</h3>
+      <p>Entrada: ${s.entrada} | Força: ${s.forca.toUpperCase()}</p>
+      <small>${s.hora}</small>
+    </div>`
+  ).join("");
 }
 
 function mostrarSinal(sinal) {
@@ -20,7 +27,7 @@ function mostrarSinal(sinal) {
   div.innerHTML = `
     <h3>${sinal.ativo} - ${sinal.direcao}</h3>
     <p>Entrada: ${sinal.entrada} | Força: ${sinal.forca.toUpperCase()}</p>
-    <small>${new Date().toLocaleTimeString()}</small><br/>
+    <small>${sinal.hora}</small><br/>
     <button onclick="navigator.clipboard.writeText('${sinal.ativo} ${sinal.direcao}')">Copiar</button>
   `;
   container.prepend(div);
@@ -46,39 +53,11 @@ function analisarCandle(anterior, atual, simbolo) {
       ativo: simbolo.replace("frx", ""),
       direcao,
       entrada: "Próxima vela",
-      forca
+      forca,
+      hora: new Date().toLocaleTimeString()
     });
   }
 }
 
 function conectarAtivo(simbolo) {
-  const ws = new WebSocket("wss://ws.binaryws.com/websockets/v3?app_id=1089");
-  ws.onopen = () => {
-    ws.send(JSON.stringify({
-      ticks_history: simbolo,
-      style: "candles",
-      end: "latest",
-      count: 2,
-      granularity: 60
-    }));
-  };
-  ws.onmessage = (msg) => {
-    const data = JSON.parse(msg.data);
-    if (data.candles && data.candles.length === 2) {
-      const [anterior, atual] = data.candles;
-      analisarCandle(anterior, atual, simbolo);
-    }
-  };
-  ws.onerror = () => {
-    console.warn("Erro com ativo", simbolo);
-  };
-}
-
-function iniciar() {
-  mostrarMensagem("🔍 Buscando sinais nos ativos reais...");
-  setInterval(() => {
-    ativos.forEach(conectarAtivo);
-  }, 30000);
-}
-
-iniciar();
+  const ws = new WebSocket("wss://ws.binaryws.co
