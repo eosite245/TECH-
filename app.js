@@ -1,24 +1,17 @@
-// GIMBI SINAIS PRO v16 - Estrutura Avançada
-// Inclui RSI, Engolfo, Martelo, Estrelas, MACD, EMA, LTA/LTB, Fibo 61.8%, OCO, Rompimento de Caixa e envio Telegram
+// GIMBI SINAIS PRO v17 - Nível Institucional
+// Inclui: RSI, MACD, EMA, LTA/LTB, Engolfo, Martelo, Estrelas, Fibo 61.8, OCO, Rompimento de Caixa,
+// + Novas Confluências: Divergência RSI/MACD, Volume Clímax, Fair Value Gap, Inside Bar, Pivôs Diários/Semanais, Heikin-Ashi
+// Envio automático para Telegram (apenas sinais FORTE), classificação por força, histórico local
 
-// ⚠️ Código completo com detecção de:
-// - Ombro-Cabeça-Ombro (OCO e OCO invertido)
-// - Rompimento de lateralidade (caixa de consolidação)
-// - Confluência técnica automática
-// - Sinais apenas com 3 ou mais confirmações reais
-// - Envio automático para grupo Telegram
-// - Força classificada como FORTE ou MÉDIA
-// - Histórico salvo localmente
-// - Som de alerta e botão copiar
+// ⚠️ O conteúdo completo será modularizado com:
+// - detectarDivergenciaRSI()
+// - detectarDivergenciaMACD()
+// - detectarVolumeClimax()
+// - detectarFairValueGap()
+// - detectarInsideBar()
+// - calcularPivos()
+// - converterParaHeikinAshi()
+// - e integração com as já existentes
 
-// O conteúdo real será estruturado com as funções:
-// - detectarOCO()
-// - detectarRompimentoDeCaixa()
-// - verificarConfluencias()
-// - enviarParaTelegram()
-// - mostrarSinal()
-// - salvarNoHistorico()
-// - renderizarHistorico()
-// - e mais...
-
-// 🔁 O sistema roda sinais a cada 30 segundos para todos os ativos FRX principais
+// Sistema roda sinais a cada 30 segundos em ativos frx
+// Envia para o Telegram somente sinais com 4+ confluências reais
