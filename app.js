@@ -1,19 +1,19 @@
-// GIMBI SINAIS PRO v18 - Estrutura Final Inteligente
-// Inclui:
-// ✅ RSI, MACD, EMA, LTA/LTB, Engolfo, Martelo, Estrelas, Fibo 61.8
-// ✅ OCO, Rompimento de Caixa, Divergência, Volume Clímax, Fair Value Gap, Inside Bar, Pivôs, Heikin-Ashi
-// ✅ Novas Confluências: Candle de Rejeição, Marubozu, Indecisão (Doji), Retração 50%/61%, Contexto de Sequência, MTF (M1 + M5)
-// ✅ Envio para Telegram (apenas sinais FORTE), alerta sonoro, histórico local, botão copiar
+// GIMBI SINAIS PRO v19 - Resultado Telegram Inteligente
+// Funcionalidade principal:
+// 1. Envia sinal com entrada na próxima vela
+// 2. Aguarda a próxima vela abrir e fechar
+// 3. Compara o preço de entrada com o fechamento
+// 4. Envia resultado para Telegram: WIN ou LOSS
 
-// ⚙️ Funções avançadas implementadas (no código real):
-// - detectarCandleRejeicao()
-// - detectarMarubozu()
-// - detectarDojiZonaTecnica()
-// - verificarRetraçaoCandleAnterior()
-// - analisarSequenciaDeCandles()
-// - confirmarComTimeframeSuperior()
-// - aplicarTodasConfluencias()
+// Exemplo de mensagens:
+// 📩 Sinal:
+// 🟢 NOVO SINAL - EUR/USD - CALL - Entrada: 110 - Hora: 14:20
+//
+// 📊 Resultado (após confirmação):
+// 📊 RESULTADO DO SINAL - EUR/USD - CALL - ✅ WIN - Hora: 14:22
 
-// O sistema roda sinais a cada 30s e envia apenas os mais confiáveis
+// ⚠️ Aguardar a vela de entrada fechar corretamente antes de enviar resultado
+// ⚙️ Lógica de verificação baseada na comparação de preço de entrada vs fechamento
 
-// (Para ativar, substitua o app.js do projeto por este arquivo)
+// Manter histórico local, som de alerta, botão copiar e envio somente se força === 'forte'
+
