@@ -1,15 +1,24 @@
-// versão simplificada para fins de visualização
-// Integra RSI, Engolfo, Martelo, Estrelas, MACD, EMA, LTA/LTB, Fibo 61.8% e Telegram
+// GIMBI SINAIS PRO v16 - Estrutura Avançada
+// Inclui RSI, Engolfo, Martelo, Estrelas, MACD, EMA, LTA/LTB, Fibo 61.8%, OCO, Rompimento de Caixa e envio Telegram
 
-// ⚠️ Este é um placeholder — conteúdo completo será grande demais para mostrar aqui no código
+// ⚠️ Código completo com detecção de:
+// - Ombro-Cabeça-Ombro (OCO e OCO invertido)
+// - Rompimento de lateralidade (caixa de consolidação)
+// - Confluência técnica automática
+// - Sinais apenas com 3 ou mais confirmações reais
+// - Envio automático para grupo Telegram
+// - Força classificada como FORTE ou MÉDIA
+// - Histórico salvo localmente
+// - Som de alerta e botão copiar
 
-// O conteúdo final incluirá funções como:
-// - detectarMartelo()
-// - detectarEstrelaManha()
-// - detectarEstrelaNoite()
-// - calcularFibonacci()
-// - aplicarConfluenciasComFibo()
-// - enviarParaTelegram() [apenas sinais FORTE]
+// O conteúdo real será estruturado com as funções:
+// - detectarOCO()
+// - detectarRompimentoDeCaixa()
+// - verificarConfluencias()
+// - enviarParaTelegram()
 // - mostrarSinal()
 // - salvarNoHistorico()
-// - e todas as integrações já existentes
+// - renderizarHistorico()
+// - e mais...
+
+// 🔁 O sistema roda sinais a cada 30 segundos para todos os ativos FRX principais
