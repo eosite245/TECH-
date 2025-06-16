@@ -20,7 +20,7 @@ const telegramChatId = "-4872023189";
 
 const historicoKey = "gimbi_historico";
 
-const MIN_CONFLUENCIAS = 2;
+const MIN_CONFLUENCIAS = 1;
 
 // === FUNÇÕES AUXILIARES ===
 
